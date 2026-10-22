@@ -36,8 +36,6 @@
   .logo{display:block;width:132px;height:auto;margin:.2em 0 .6em;image-rendering:pixelated}
   .links{font-size:.95em;margin:.6em 0 .2em}
   .links a{margin-right:.2em}
-  .ca{font-family:"Courier New",monospace;font-size:.9em;color:#8a2f14;cursor:pointer;border-bottom:1px dotted #8a2f14}
-  .ca.copied{color:green;border-bottom-color:green}
   /* specimen viewer */
   .viewer{border:1px solid #ded5c4;padding:14px;margin:1em 0;background:#fffdf8}
   .vrow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
@@ -99,8 +97,7 @@
   <div class="subnum">lives, each one able to die.</div>
   <p class="links">
     <a href="https://x.com/tamayurachain" target="_blank" rel="noopener">twitter / x</a> ·
-    <a href="#code">core code</a> ·
-    <span class="ca" id="ca" title="contract address" data-ca="h67ZTn5AmUR9g9R76JCSN9S36BqoXafq3kAnyV7pump">CA: h67ZTn5AmUR9g9R76JCSN9S36BqoXafq3kAnyV7pump</span>
+    <a href="#code">core code</a>
   </p>
 </header>
 
@@ -536,7 +533,6 @@ function generate(id) {
       <tr><th>supply</th><td class="mono">1,000,000,000</td></tr>
       <tr><th>launch</th><td>fair launch · pump.fun</td></tr>
       <tr><th>chain</th><td>solana</td></tr>
-      <tr><th>contract</th><td><span class="ca" id="ca2" data-ca="h67ZTn5AmUR9g9R76JCSN9S36BqoXafq3kAnyV7pump">h67ZTn5AmUR9g9R76JCSN9S36BqoXafq3kAnyV7pump</span></td></tr>
     </tbody>
   </table>
   <ul>
@@ -737,27 +733,6 @@ function generate(id) {
   draw(777);
 })();
 
-/* ----- contract address -----
-   set CA to the real mint at launch. leave "" to keep showing "TBA".
-   both slots (hero + tokenomics) update and become click-to-copy. */
-var CA = "h67ZTn5AmUR9g9R76JCSN9S36BqoXafq3kAnyV7pump"; // official contract address
-(function(){
-  var short = CA ? CA.slice(0,4) + "…" + CA.slice(-4) : "";
-  ["ca","ca2"].forEach(function(id){
-    var el = document.getElementById(id);
-    if(!el) return;
-    if(!CA){ el.style.cursor = "default"; el.style.borderBottom = "none"; return; } // TBA, no copy action
-    el.textContent = (id === "ca" ? "CA: " : "") + short;
-    el.setAttribute("data-ca", CA);
-    el.addEventListener("click", function(){
-      if(navigator.clipboard) navigator.clipboard.writeText(CA);
-      var prev = el.textContent;
-      el.classList.add("copied");
-      el.textContent = (id === "ca" ? "CA: " : "") + "copied ✓";
-      setTimeout(function(){ el.classList.remove("copied"); el.textContent = prev; }, 1200);
-    });
-  });
-})();
 </script>
 </body>
 </html>
