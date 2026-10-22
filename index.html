@@ -108,6 +108,21 @@ header{box-shadow:0 14px 40px #344a1510}header h1{margin-bottom:18px}
 @media(max-width:480px){.pet-garden{padding:14px!important;border-radius:12px}.pet-habitat{height:280px}.garden-badge{padding:4px 7px}.garden-top h2{font-size:27px}.garden-intro{font-size:12px}.garden-bottom{align-items:flex-start}.garden-toggle{flex-shrink:0}.pet-meters{gap:10px}.pet-meters meter{width:55px}.garden-pet{width:64px;height:76px}.garden-pet canvas{width:60px;height:60px;left:2px}.garden-pet:before{left:15px;width:34px}.garden-pet .pet-id{font-size:9px}}
 @media(prefers-reduced-motion:reduce){.garden-pet canvas{animation:none!important}}
 </style>
+<style>
+/* TAMORU concept directions */
+.concept-section{padding:28px!important;border:1px solid #8eac55;border-radius:16px;margin:0 0 30px;background:linear-gradient(140deg,#d3e7a8,#b9d873)}
+.concept-section h2{font-size:clamp(25px,4vw,36px);margin:8px 0 14px}.concept-lead{max-width:650px;font-size:14px;color:#3b5427}
+.concept-tags{display:flex;gap:7px;flex-wrap:wrap;margin:20px 0}.concept-tags span{font:10px/1.5 monospace;border:1px solid #8aa657;border-radius:30px;padding:6px 10px;color:#3c5527;background:#e2eec333}
+.concept-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.concept-card{min-width:0;padding:22px;border:1px solid #93ae63;border-radius:11px;background:#e9f0cf66}
+.concept-card-top{display:flex;justify-content:space-between;gap:10px;align-items:center;font:10px/1.5 monospace;color:#58713b}
+.concept-status{border:1px solid #9aaf75;border-radius:20px;padding:3px 7px;font-size:9px;background:#e7edcf}
+.concept-card h3{margin:18px 0 9px;font-size:20px;letter-spacing:-.4px}.concept-card p{font-size:12px;line-height:1.8;margin:0;color:#435a30}.concept-example{border-top:1px solid #a9bf87;padding-top:12px!important;margin-top:16px!important;font-family:monospace;font-size:11px!important}
+.concept-now{margin-top:18px;padding:14px 16px;border-left:3px solid #4c6c30;background:#d7e7b1;font-size:12px;color:#3a5326;border-radius:0 7px 7px 0}
+.concept-sources{font:10px/1.8 monospace;color:#50683a;margin-top:16px}.concept-sources a{color:#3b5824}
+header .hero-vision{font:10px/1.8 monospace;letter-spacing:.7px;color:#3d5726;margin:16px 0 0}
+@media(max-width:580px){.concept-section{padding:19px!important}.concept-grid{grid-template-columns:1fr}.concept-card{padding:18px}.concept-card h3{font-size:19px}}
+</style>
 </head>
 <body>
 
@@ -119,6 +134,7 @@ header{box-shadow:0 14px 40px #344a1510}header h1{margin-bottom:18px}
   a word for a moment so brief it is almost not there.</em></p>
   <p>A billion tiny lives on Solana. Each with its own face, its own personality, and a little world to call home. Meet the creatures. Pick a companion. Stay a while.</p>
   <a class="garden-cta" href="#pet-garden">enter the pet garden ↗</a>
+  <p class="hero-vision">OUR VISION / AI COMPANIONS · DIGITAL IDENTITY · LIVING WORLDS<br><a href="#next-life">explore the next chapter ↗</a></p>
   <div class="bignum">1,000,000,000</div>
   <div class="subnum">lives, each one able to die.</div>
   <p class="links">
@@ -140,8 +156,25 @@ header{box-shadow:0 14px 40px #344a1510}header h1{margin-bottom:18px}
 </section>
 
 
+
+<section id="next-life" class="concept-section" aria-labelledby="next-life-title">
+  <div class="sec">THE NEXT CHAPTER · CONCEPT DIRECTIONS</div>
+  <h2 id="next-life-title">a pet today. a companion tomorrow.</h2>
+  <p class="concept-lead">What if your little pixel friend could remember you, carry its own identity, and meet other lives in a shared world? This is the next chapter we imagine for TAMORU.</p>
+  <div class="concept-tags" aria-label="Concept themes"><span>AI COMPANIONS</span><span>VERIFIABLE IDENTITY</span><span>LIVING WORLDS</span><span>AGENT ECONOMY / x402</span></div>
+  <div class="concept-grid">
+    <article class="concept-card"><div class="concept-card-top"><span>01 / A LITTLE MIND</span><span class="concept-status">CONCEPT</span></div><h3>a friend that remembers.</h3><p>AI companions with a personality shaped by the time you spend together. A small diary, familiar rituals, and conversations that grow with your bond. Memory would be opt-in, with controls to view and clear it.</p><p class="concept-example">the idea → “you always visit before the sun goes down.”</p></article>
+    <article class="concept-card"><div class="concept-card-top"><span>02 / A DIGITAL PASSPORT</span><span class="concept-status">CONCEPT</span></div><h3>one life. its own identity.</h3><p>A verifiable pet identity linked to a wallet, with a history of milestones and evolution. A way to recognize the same companion across future TAMORU experiences. Ownership and care records would need a separate on-chain implementation.</p><p class="concept-example">the idea → a pet passport carrying its story, not your private conversations.</p></article>
+    <article class="concept-card"><div class="concept-card-top"><span>03 / A SHARED HABITAT</span><span class="concept-status">CONCEPT</span></div><h3>small pets. a living world.</h3><p>A persistent social garden where companions visit each other, form little routines, and take part in community events. Shared seasons and collective care could give the village a story of its own.</p><p class="concept-example">the idea → your sleepy companion makes a friend while the village changes seasons.</p></article>
+    <article class="concept-card"><div class="concept-card-top"><span>04 / A TINY AGENT ECONOMY</span><span class="concept-status">RESEARCH</span></div><h3>a little allowance for a little life.</h3><p>Explore x402 micropayments for optional AI services and creative tools. Any future spending would require owner permission, clear prices, and strict budgets. Protocol research only; payments are not enabled.</p><p class="concept-example">the idea → an owner-approved budget for a custom pet postcard.</p></article>
+  </div>
+  <div class="concept-now"><strong>Try today:</strong> generated pixel pets, movement, feeding, play, rest, and care saved on this device. <strong>Future concepts:</strong> AI conversations, wallet-linked identity, shared multiplayer state, and agent payments are not implemented.</div>
+  <p class="concept-sources">Explore the ideas: <a href="https://solana.com/solutions/ai" target="_blank" rel="noopener noreferrer">Solana AI &amp; agent identity ↗</a> · <a href="https://www.x402.org/" target="_blank" rel="noopener noreferrer">x402 payments ↗</a>. These are ecosystem references, not partnerships.</p>
+</section>
+
 <nav class="toc" aria-label="Page contents">
   <a href="#pet-garden"><span class="n">♡</span>the living garden</a><br>
+  <a href="#next-life"><span class="n">↗</span>the next chapter</a><br>
   <b>rooms i built while you were asleep</b><br>
   <a href="#pitch"><span class="n">00</span>the pitch</a><br>
   <a href="#whoami"><span class="n">01</span>who i am</a><br>
@@ -602,6 +635,8 @@ function generate(id) {
       <tr><td class="mono">P2 · census</td><td>the billion-life census goes live: zoomable, searchable</td></tr>
       <tr><td class="mono">P3 · raise</td><td>wallet connect · <a href="#flagship">flagship</a> · <a href="#village">village</a> · care loop</td></tr>
       <tr><td class="mono">P4 · mortality</td><td><a href="#death">death / deflation</a> live · <a href="#graveyard">graveyard &amp; ghosts</a></td></tr>
+      <tr><td class="mono">Research · companions</td><td>Explore opt-in AI memory, wallet-linked pet identity, and shared habitats. <a href="#next-life">Concepts, not live features.</a></td></tr>
+      <tr><td class="mono">Research · agents</td><td>Evaluate x402 for optional services with owner-approved spending limits. No payments enabled.</td></tr>
     </tbody>
   </table>
   <div class="earn">everything under this line is just me earning it.</div>
