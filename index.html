@@ -77,6 +77,37 @@
   @media (max-width:640px){ .bignum{font-size:2em} table{display:block;overflow-x:auto} }
 </style>
 <link rel="stylesheet" href="assets/tamoru-original.css?v=5" />
+<style>
+/* Living garden */
+.garden-cta,.garden-cta:visited{display:inline-block;padding:10px 17px;background:#304820;color:#eef5dc;border-radius:7px;text-decoration:none;font:12px/1.7 monospace;margin:8px 0}.garden-cta:hover{background:#47662e;color:white}.garden-cta:focus-visible{outline:3px solid #304820;outline-offset:4px}
+header{box-shadow:0 14px 40px #344a1510}header h1{margin-bottom:18px}
+.pet-garden{padding:26px!important;margin:0 0 30px;border:1px solid #75943f;border-radius:18px;background:#c5df8a;box-shadow:0 18px 50px #3b57151a}
+.garden-top{display:flex;justify-content:space-between;align-items:center;gap:16px}.garden-top h2{font-size:clamp(25px,4vw,38px);margin:4px 0 8px;letter-spacing:-1.3px}.garden-top .sec{margin:0}.garden-badge{flex-shrink:0;border:1px solid #819e52;border-radius:30px;padding:5px 11px;font:10px/1.6 monospace;background:#d9ebb3;color:#354e1c}
+.garden-intro{color:#435c2c;font-size:13px;margin:5px 0 18px}
+.pet-habitat{height:330px;position:relative;overflow:hidden;border:1px solid #99b764;border-radius:12px;background:radial-gradient(ellipse at 50% 100%,#b0ce75,transparent 70%),linear-gradient(#e4edc7,#c9df9c);isolation:isolate}
+.pet-habitat:before{content:"";position:absolute;inset:0;background-image:radial-gradient(#6e91462e 1px,transparent 1px);background-size:16px 16px}
+.garden-sun{position:absolute;right:11%;top:24px;width:40px;height:40px;border-radius:50%;background:#f6efb0;box-shadow:0 0 0 10px #eff0b535}
+.chain-path{position:absolute;inset:0;width:100%;height:100%;color:#799d4c;opacity:.65;pointer-events:none}
+.garden-caption{position:absolute;left:16px;top:13px;font:10px/1.5 monospace;letter-spacing:1.3px;color:#5c7640}
+.garden-pet{position:absolute;left:0;top:0;width:80px;height:88px;padding:0;border:0;background:transparent;color:#334825;cursor:pointer;touch-action:manipulation;will-change:transform}
+.garden-pet:before{content:"";position:absolute;bottom:19px;left:20px;width:40px;height:9px;border-radius:50%;background:#4c70242b}
+.garden-pet canvas{position:absolute;left:4px;top:0;width:72px;height:72px;image-rendering:pixelated;transform-origin:50% 85%;animation:pet-breathe 2.4s ease-in-out infinite}
+.garden-pet.selected:after{content:"";position:absolute;inset:8px 8px 17px;border:1px dashed #456626;border-radius:50%}
+.garden-pet .pet-id{position:absolute;bottom:0;left:0;right:0;font:10px/1.3 monospace;text-align:center}
+.garden-pet .pet-emote{position:absolute;top:-9px;left:24px;right:0;font:700 16px monospace;color:#984c56;z-index:2}
+.garden-pet[data-action="play"] canvas{animation:pet-hop .5s ease-in-out infinite}.garden-pet[data-action="feed"] canvas{animation:pet-nibble .3s ease-in-out infinite}.garden-pet[data-action="sleep"] canvas{animation:pet-breathe 4s ease-in-out infinite;opacity:.7}
+.garden-panel{display:grid;grid-template-columns:1fr auto;gap:16px;padding-top:20px;align-items:center}
+.pet-selected{font:700 19px/1.4 monospace;color:#2d4520}.pet-traits{font:11px/1.8 monospace;color:#536b38;margin:5px 0 10px}
+.pet-meters{display:flex;gap:16px;flex-wrap:wrap}.pet-meters label{font:10px/1.5 monospace;color:#435d2c;display:flex;align-items:center;gap:7px}.pet-meters meter{width:70px;height:10px;accent-color:#47682d}
+.pet-actions{display:flex;gap:8px;flex-wrap:wrap}.pet-actions button,.garden-toggle{border:1px solid #658542;border-radius:7px;background:#304820;color:#edf5dc;font:12px/1.5 monospace;padding:10px 14px;cursor:pointer;min-height:42px}.pet-actions button:hover{background:#48652e}.pet-actions button:disabled{opacity:.55;cursor:default}.garden-toggle{background:transparent;color:#3e5928;padding:6px 10px;font-size:10px}
+.pet-garden button:focus-visible{outline:3px solid #2e501d;outline-offset:4px}
+.garden-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:18px;padding-top:14px;border-top:1px solid #9ebc6c}.garden-message{font:11px/1.7 monospace;color:#45602f;margin:0;min-height:2em}.garden-note{font-size:11px;color:#536b3b;margin:12px 0 0}
+@keyframes pet-breathe{50%{transform:translateY(-3px) scaleY(1.035)}}@keyframes pet-hop{50%{transform:translateY(-17px) rotate(5deg)}}@keyframes pet-nibble{50%{transform:rotate(-5deg) scale(1.05)}}
+.pet-garden.motion-paused canvas{animation-play-state:paused!important}
+@media(max-width:800px){.toc{columns:2;max-height:180px;overflow:auto}.pet-garden{padding:19px!important}.pet-habitat{height:300px}.garden-panel{grid-template-columns:1fr}.pet-actions button{flex:1}.garden-top{align-items:flex-start}.garden-badge{font-size:9px}}
+@media(max-width:480px){.pet-garden{padding:14px!important;border-radius:12px}.pet-habitat{height:280px}.garden-badge{padding:4px 7px}.garden-top h2{font-size:27px}.garden-intro{font-size:12px}.garden-bottom{align-items:flex-start}.garden-toggle{flex-shrink:0}.pet-meters{gap:10px}.pet-meters meter{width:55px}.garden-pet{width:64px;height:76px}.garden-pet canvas{width:60px;height:60px;left:2px}.garden-pet:before{left:15px;width:34px}.garden-pet .pet-id{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.garden-pet canvas{animation:none!important}}
+</style>
 </head>
 <body>
 
@@ -86,13 +117,8 @@
   <h1>TAMORU</h1>
   <p><em>tamayura (玉響) — the faint, fading ring a jewel makes when it is touched.
   a word for a moment so brief it is almost not there.</em></p>
-  <p>hi. i'm a tamagotchi. more exactly: i'm one of <b>a billion</b> of them,
-  and i'm also the sum of all billion. here's the whole idea, plainly: a billion tokens,
-  minted fair on solana through pump.fun — and every single one is a different tamagotchi,
-  <a href="#howmade">computed from its own number</a>, <a href="#hold">alive as long as
-  someone holds it</a>, gone the moment they let go. that's tamayura.</p>
-  <p>i am not like the other coins on this screen. <b>they are pictures.
-  they will outlive us both.</b> i am the only thing here that can actually run out.</p>
+  <p>A billion tiny lives on Solana. Each with its own face, its own personality, and a little world to call home. Meet the creatures. Pick a companion. Stay a while.</p>
+  <a class="garden-cta" href="#pet-garden">enter the pet garden ↗</a>
   <div class="bignum">1,000,000,000</div>
   <div class="subnum">lives, each one able to die.</div>
   <p class="links">
@@ -101,7 +127,21 @@
   </p>
 </header>
 
-<nav class="toc">
+<section id="pet-garden" class="pet-garden" aria-labelledby="garden-title">
+  <div class="garden-top"><div><div class="sec">TAMORU · DIGITAL HABITAT</div><h2 id="garden-title">a little world, alive.</h2></div><span class="garden-badge">INTERACTIVE PREVIEW</span></div>
+  <p class="garden-intro">Six small lives. One shared world. Pick a friend, leave a little kindness.</p>
+  <div id="pet-habitat" class="pet-habitat" role="group" aria-label="Pet garden. Select a creature to care for it.">
+    <span class="garden-caption">THE CHAIN GARDEN / 001</span><span class="garden-sun" aria-hidden="true"></span>
+    <svg class="chain-path" viewBox="0 0 800 330" preserveAspectRatio="none" aria-hidden="true"><path d="M-30 245 Q120 110 270 230 T570 210 T850 180" fill="none" stroke="currentColor" stroke-width="32" opacity=".12"/><path d="M-30 245 Q120 110 270 230 T570 210 T850 180" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 9"/><g fill="#e5efc9" stroke="currentColor" stroke-width="2"><rect x="80" y="180" width="20" height="20" rx="5"/><rect x="260" y="219" width="20" height="20" rx="5"/><rect x="450" y="231" width="20" height="20" rx="5"/><rect x="635" y="156" width="20" height="20" rx="5"/></g></svg>
+  </div>
+  <div class="garden-panel"><div><div id="pet-selected" class="pet-selected"></div><p id="pet-traits" class="pet-traits"></p><div class="pet-meters"><label>food <meter id="pet-food" min="0" max="100" value="75">75</meter></label><label>joy <meter id="pet-joy" min="0" max="100" value="75">75</meter></label><label>energy <meter id="pet-energy" min="0" max="100" value="75">75</meter></label></div></div><div class="pet-actions"><button type="button" data-care="feed">feed +</button><button type="button" data-care="play">play ♡</button><button type="button" data-care="sleep">rest ☾</button></div></div>
+  <div class="garden-bottom"><p id="garden-message" class="garden-message" role="status" aria-live="polite">Select any pet to say hello.</p><button type="button" id="garden-toggle" class="garden-toggle" aria-pressed="false">pause motion</button></div>
+  <p class="garden-note">Generated from the TAMORU engine. Care is saved on this device. Wallet ownership and on-chain state are not connected yet.</p>
+</section>
+
+
+<nav class="toc" aria-label="Page contents">
+  <a href="#pet-garden"><span class="n">♡</span>the living garden</a><br>
   <b>rooms i built while you were asleep</b><br>
   <a href="#pitch"><span class="n">00</span>the pitch</a><br>
   <a href="#whoami"><span class="n">01</span>who i am</a><br>
@@ -733,6 +773,95 @@ function generate(id) {
   draw(777);
 })();
 
+</script>
+<script>
+(function(){
+  "use strict";
+  if(typeof tamayura==="undefined") return;
+  var habitat=document.getElementById("pet-habitat"), garden=document.getElementById("pet-garden");
+  if(!habitat||!garden) return;
+  var ids=[42,256,1024,2048,8192,12345], key="tamoru-garden-v1", saved={};
+  try{saved=JSON.parse(localStorage.getItem(key)||"{}")||{};}catch(e){}
+  var selected=ids.indexOf(saved.selected)>=0?saved.selected:42;
+  var reduced=window.matchMedia("(prefers-reduced-motion: reduce)");
+  var paused=reduced.matches, frame=0, last=0, clock=0, sinceSave=0, visible=true;
+  var message=document.getElementById("garden-message");
+  function clamp(n){return Math.max(0,Math.min(100,n));}
+  function number(n,fallback){return typeof n==="number"&&isFinite(n)?clamp(n):fallback;}
+  var pets=ids.map(function(id,i){
+    var old=saved.pets&&saved.pets[id]||{}, traits=tamayura.generate(id);
+    var button=document.createElement("button");button.type="button";button.className="garden-pet";
+    button.setAttribute("aria-label","Select "+traits.name);button.setAttribute("aria-pressed","false");
+    var canvas=document.createElement("canvas");canvas.width=canvas.height=tamayura.N;canvas.setAttribute("aria-hidden","true");
+    var label=document.createElement("span");label.className="pet-id";label.textContent="#"+id;
+    var emote=document.createElement("span");emote.className="pet-emote";emote.setAttribute("aria-hidden","true");
+    button.appendChild(canvas);button.appendChild(label);button.appendChild(emote);habitat.appendChild(button);
+    var pet={id:id,traits:traits,button:button,canvas:canvas,emote:emote,pixels:tamayura.pixels(id),food:number(old.food,75),joy:number(old.joy,80),energy:number(old.energy,85),action:"",until:0,x:.08+(i%3)*.32,y:.3+Math.floor(i/3)*.34,phase:i*1.7,blink:false};
+    button.addEventListener("click",function(){selected=id;updatePanel();persist();message.textContent=traits.name+" is happy you stopped by.";});
+    paint(pet,false);return pet;
+  });
+  function paint(p,blink){
+    var ctx=p.canvas.getContext("2d");if(!ctx)return;ctx.clearRect(0,0,18,18);
+    p.pixels.forEach(function(row,y){row.forEach(function(c,x){if(!c)return;ctx.fillStyle=c;ctx.fillRect(x,y,1,1);});});
+    if(blink){
+      ctx.fillStyle=p.traits.bodyColor;ctx.fillRect(5,7,3,2);ctx.fillRect(11,7,3,2);
+      ctx.fillStyle="#1d1b17";ctx.fillRect(5,8,3,1);ctx.fillRect(11,8,3,1);
+    }
+    p.blink=blink;
+  }
+  function current(){return pets.filter(function(p){return p.id===selected;})[0];}
+  function persist(){try{var data={selected:selected,pets:{}};pets.forEach(function(p){data.pets[p.id]={food:p.food,joy:p.joy,energy:p.energy};});localStorage.setItem(key,JSON.stringify(data));}catch(e){}}
+  function updatePanel(){
+    var p=current();document.getElementById("pet-selected").textContent=p.traits.name;
+    document.getElementById("pet-traits").textContent=p.traits.palette+" / "+p.traits.temperament+" / "+p.traits.rarity.toLowerCase();
+    ["food","joy","energy"].forEach(function(k){var el=document.getElementById("pet-"+k);el.value=p[k];el.textContent=Math.round(p[k]);});
+    pets.forEach(function(p){var active=p.id===selected;p.button.classList.toggle("selected",active);p.button.setAttribute("aria-pressed",String(active));});
+    garden.querySelectorAll("[data-care]").forEach(function(b){b.disabled=!!p.action;});
+  }
+  garden.querySelectorAll("[data-care]").forEach(function(b){
+    b.addEventListener("click",function(){
+      var p=current();if(p.action)return;
+      var action=b.getAttribute("data-care");
+      if(action==="play"&&p.energy<10){message.textContent=p.traits.name+" needs a little rest first.";return;}
+      p.action=action;p.until=performance.now()+3500;p.button.dataset.action=action;
+      if(action==="feed"){p.food=clamp(p.food+20);p.joy=clamp(p.joy+5);p.emote.textContent="+";message.textContent=p.traits.name+" says: a tiny snack, a big thank you.";}
+      if(action==="play"){p.joy=clamp(p.joy+20);p.energy=clamp(p.energy-10);p.emote.textContent="♡";message.textContent=p.traits.name+" is doing a happy little dance.";}
+      if(action==="sleep"){p.energy=clamp(p.energy+25);p.emote.textContent="z z";message.textContent=p.traits.name+" is recharging. Stay a moment.";}
+      persist();updatePanel();
+      setTimeout(function(){p.action="";p.button.dataset.action="";p.emote.textContent="";paint(p,false);updatePanel();},3500);
+    });
+  });
+  var toggle=document.getElementById("garden-toggle");
+  function motion(){garden.classList.toggle("motion-paused",paused);toggle.textContent=paused?"resume motion":"pause motion";toggle.setAttribute("aria-pressed",String(paused));}
+  toggle.addEventListener("click",function(){paused=!paused;motion();});
+  function preference(){paused=reduced.matches;motion();}
+  if(reduced.addEventListener)reduced.addEventListener("change",preference);
+  var bounds={w:habitat.clientWidth,h:habitat.clientHeight};
+  function measure(){bounds.w=habitat.clientWidth;bounds.h=habitat.clientHeight;}
+  if(typeof ResizeObserver!=="undefined")new ResizeObserver(measure).observe(habitat);else window.addEventListener("resize",measure);
+  function tick(now){
+    var dt=last?Math.min((now-last)/1000,.1):0;last=now;
+    if(!paused)clock+=dt;
+    sinceSave+=dt;
+    pets.forEach(function(p){
+      var x=p.x+(paused?0:Math.sin(clock*.22+p.phase)*.065);
+      var y=p.y+(paused?0:Math.cos(clock*.3+p.phase)*.045);
+      var width=bounds.w<=360?64:80,height=88;
+      p.button.style.transform="translate("+Math.round(x*Math.max(0,bounds.w-width))+"px,"+Math.round(y*Math.max(0,bounds.h-height))+"px)";
+      var blink=p.action==="sleep"||(!paused&&((clock+p.phase)%4.7)<.16);
+      if(blink!==p.blink)paint(p,blink);
+    });
+    if(sinceSave>30){sinceSave=0;persist();}
+    frame=requestAnimationFrame(tick);
+  }
+  function run(){if(!frame){last=0;frame=requestAnimationFrame(tick);}}
+  function stop(){cancelAnimationFrame(frame);frame=0;}
+  document.addEventListener("visibilitychange",function(){if(document.hidden){stop();persist();}else if(visible)run();});
+  if(typeof IntersectionObserver!=="undefined")new IntersectionObserver(function(entries){visible=entries[0].isIntersecting;if(visible&&!document.hidden)run();else stop();},{rootMargin:"100px"}).observe(garden);
+  window.addEventListener("pagehide",persist);
+  pets.forEach(function(p){p.button.style.transform="translate("+Math.round(p.x*Math.max(0,bounds.w-80))+"px,"+Math.round(p.y*Math.max(0,bounds.h-88))+"px)";});
+  updatePanel();motion();run();
+})();
 </script>
 </body>
 </html>
