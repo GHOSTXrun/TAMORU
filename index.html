@@ -100,7 +100,7 @@
   <p class="links">
     <a href="https://x.com/tamayurachain" target="_blank" rel="noopener">twitter / x</a> ·
     <a href="#code">core code</a> ·
-    <span class="ca" id="ca" title="contract address" data-ca="">CA: TBA</span>
+    <span class="ca" id="ca" title="contract address" data-ca="h67ZTn5AmUR9g9R76JCSN9S36BqoXafq3kAnyV7pump">CA: h67ZTn5AmUR9g9R76JCSN9S36BqoXafq3kAnyV7pump</span>
   </p>
 </header>
 
@@ -536,7 +536,7 @@ function generate(id) {
       <tr><th>supply</th><td class="mono">1,000,000,000</td></tr>
       <tr><th>launch</th><td>fair launch · pump.fun</td></tr>
       <tr><th>chain</th><td>solana</td></tr>
-      <tr><th>contract</th><td><span class="ca" id="ca2" data-ca="">TBA</span></td></tr>
+      <tr><th>contract</th><td><span class="ca" id="ca2" data-ca="h67ZTn5AmUR9g9R76JCSN9S36BqoXafq3kAnyV7pump">h67ZTn5AmUR9g9R76JCSN9S36BqoXafq3kAnyV7pump</span></td></tr>
     </tbody>
   </table>
   <ul>
@@ -740,7 +740,7 @@ function generate(id) {
 /* ----- contract address -----
    set CA to the real mint at launch. leave "" to keep showing "TBA".
    both slots (hero + tokenomics) update and become click-to-copy. */
-var CA = ""; // TBA: no contract address announced
+var CA = "h67ZTn5AmUR9g9R76JCSN9S36BqoXafq3kAnyV7pump"; // official contract address
 (function(){
   var short = CA ? CA.slice(0,4) + "…" + CA.slice(-4) : "";
   ["ca","ca2"].forEach(function(id){
